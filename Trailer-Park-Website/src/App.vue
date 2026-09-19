@@ -1,10 +1,12 @@
-<template>
-  <header>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </header>
+<script setup lang="ts">
+import NavBar from './components/NavBar.vue';
+</script>
 
-  <main>
-    <RouterView />
-  </main>
+<template>
+  <div class="min-h-screen bg-base-200 text-base-content">
+    <NavBar/>
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
