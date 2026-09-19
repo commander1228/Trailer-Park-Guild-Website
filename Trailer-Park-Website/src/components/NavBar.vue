@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavButton from './Navbutton.vue';
+import NavButton from './NavButton.vue';
 </script>
 
 <template>

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "cd Trailer-Park-Website && npm ci",
+  "buildCommand": "cd Trailer-Park-Website && npm run build",
+  "outputDirectory": "Trailer-Park-Website/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
