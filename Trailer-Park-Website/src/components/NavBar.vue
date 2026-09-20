@@ -5,6 +5,5 @@ import NavButton from './NavButton.vue';
 <template>
 <div class="NavBar bg-base-100 shadow-sm">
   <NavButton text="Home" to="/" />
-  <NavButton text="Todo test" to="/todo-test"/>
 </div>
 </template>
