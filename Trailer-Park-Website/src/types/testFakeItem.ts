@@ -1,4 +1,4 @@
 export interface TestItem{
-    BlizzardId: number;
+    blizzardId: number;
     quantity: number;
 }
