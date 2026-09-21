@@ -2,6 +2,7 @@ import type { TestItem } from "@/types/testFakeItem";
 import { postApi } from "./api";
 
 
-export function addTestItem(testItem: TestItem) {
-    console.log("added item : ", postApi('/api/guild/add',testItem))
+export async function addTestItem(testItem: TestItem) {
+    const result = await postApi('/api/guild/add', testItem)
+    console.log("added item : ", result)
 }
