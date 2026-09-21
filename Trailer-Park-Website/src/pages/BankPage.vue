@@ -5,7 +5,7 @@ import type { TestItem } from '@/types/testFakeItem';
 
 async function handleTestAdd() {
     const fakeItem: TestItem = {
-        blizzId: 17780,
+        BlizzardId: 17780,
         quantity:1
     } 
 
