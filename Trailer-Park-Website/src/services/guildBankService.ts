@@ -1,8 +1,13 @@
 import type { TestItem } from "@/types/testFakeItem";
-import { postApi } from "./api";
+import { getApi, postApi } from "./api";
+import type { WowItem } from "@/types/Item";
 
 
 export async function addTestItem(testItem: TestItem) {
     const result = await postApi('/api/guild/add', testItem)
-    console.log("added item : ", result)
+    console.log("added item : ", result);
+}
+
+export async function getWowItems(): Promise<WowItem[]> {
+    return getApi<WowItem[]>('/api/guild');
 }

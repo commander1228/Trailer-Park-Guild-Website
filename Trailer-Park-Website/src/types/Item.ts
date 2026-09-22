@@ -1,17 +1,18 @@
-export const QUALITY_COLORS = {
-  Poor: "#9d9d9d",
-  Common: "#ffffff",
-  Uncommon: "#1eff00",
-  Rare: "#0070dd",
-  Epic: "#a335ee",
-  Legendary: "#ff8000",
+export const QUALITY_TYPE = {
+  POOR: "#9d9d9d",
+  COMMON: "#ffffff",
+  UNCOMMON: "#1eff00",
+  RARE: "#0070dd",
+  EPIC: "#a335ee",
+  LEGENDARY: "#ff8000",
 } as const;
 
-export type Quality = keyof typeof QUALITY_COLORS;
+export type Quality = keyof typeof QUALITY_TYPE;
 
-export interface Item {
-  id: number;
-  name: string;
-  quality: Quality;
-  amount: number;
+export interface WowItem {
+  id: number
+  name: string
+  qualityType: Quality
+  qualityName: string
+  quantity: number
 }
