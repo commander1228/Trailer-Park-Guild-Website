@@ -10,7 +10,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="grid grid-cols-[repeat(auto-fill,10rem)] justify-center gap-4">
+  <div class="grid grid-cols-[repeat(auto-fit,10rem)] justify-center gap-4">
     <WowItem v-for="item in items" :key="item.id" :item="item" />
   </div>
 </template>

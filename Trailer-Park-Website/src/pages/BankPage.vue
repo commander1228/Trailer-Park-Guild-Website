@@ -46,10 +46,19 @@ onMounted(refreshBank)
 </script>
 
 <template>
-  <section class="space-y-6">
-    <div class="flex flex-wrap items-center justify-between gap-4">
-      <h1 class="text-3xl font-bold text-primary">THE VAULT</h1>
-      <div class="flex gap-2">
+  <section class="relative isolate min-h-screen overflow-hidden p-6">
+    <img
+      src="/bank-vault.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 z-0 size-full object-cover object-top"
+    />
+    <div class="absolute inset-0 z-0 bg-neutral/70"></div>
+
+    <div class="relative z-10 space-y-6">
+      <h1 class="text-center text-4xl font-bold text-neutral-content">THE VAULT</h1>
+
+      <div class="flex justify-center gap-2">
         <ActionButton
           :text="isRefreshing ? 'Refreshing...' : 'Refresh bank'"
           :disabled="isRefreshing"
@@ -57,19 +66,19 @@ onMounted(refreshBank)
         />
         <ActionButton text="Add test items" :disabled="isRefreshing" @click="handleTestAdd" />
       </div>
-    </div>
 
-    <div v-if="refreshError" role="alert" class="alert alert-error">
-      <span>{{ refreshError }}</span>
-    </div>
+      <div v-if="refreshError" role="alert" class="alert alert-error">
+        <span>{{ refreshError }}</span>
+      </div>
 
-    <div
-      v-else-if="!isRefreshing && items.length === 0"
-      class="rounded-box border border-base-300 p-6 text-center text-base-content/70"
-    >
-      The guild bank is empty.
-    </div>
+      <div
+        v-else-if="!isRefreshing && items.length === 0"
+        class="rounded-box border border-base-300 bg-base-100 p-6 text-center text-base-content/70"
+      >
+        The guild bank is empty.
+      </div>
 
-    <BankInventoryComponent v-else :items="items" />
+      <BankInventoryComponent v-else :items="items" />
+    </div>
   </section>
 </template>
