@@ -3,7 +3,7 @@ import { getApi, postApi } from "./api";
 import type { WowItem } from "@/types/Item";
 
 
-export async function addTestItem(testItem: TestItem) {
+export async function addTestItems(testItem: TestItem[]) {
     const result = await postApi('/api/guild/add', testItem)
     console.log("added item : ", result);
 }

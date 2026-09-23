@@ -2,13 +2,21 @@
 import { onMounted, ref } from 'vue'
 import ActionButton from '@/components/ActionButton.vue'
 import WowItem from '@/components/WowItem.vue'
-import { addTestItem, getWowItems } from '@/services/guildBankService'
+import { addTestItems, getWowItems } from '@/services/guildBankService'
 import type { WowItem as WowItemData } from '@/types/Item'
 import type { TestItem } from '@/types/testFakeItem'
 
 const items = ref<WowItemData[]>([])
 const isRefreshing = ref(false)
 const refreshError = ref<string | null>(null)
+const testItems: TestItem[] = [
+  { blizzardId: 17780, quantity: 20 },
+  { blizzardId: 19019, quantity: 30 },
+  { blizzardId: 19397, quantity: 20 },
+  { blizzardId: 5976, quantity: 10 },
+  { blizzardId: 17182, quantity: 1 },
+  { blizzardId: 19019, quantity: 5 },
+]
 
 function populateBank(wowItems: WowItemData[]) {
   items.value = wowItems
@@ -28,12 +36,7 @@ async function refreshBank() {
 }
 
 async function handleTestAdd() {
-  const fakeItem: TestItem = {
-    blizzardId: 17780,
-    quantity: 1,
-  }
-
-  await addTestItem(fakeItem)
+  await addTestItems(testItems)
   await refreshBank()
 }
 
@@ -52,7 +55,7 @@ onMounted(refreshBank)
           :disabled="isRefreshing"
           @click="refreshBank"
         />
-        <ActionButton text="test add" :disabled="isRefreshing" @click="handleTestAdd" />
+        <ActionButton text="Add test items" :disabled="isRefreshing" @click="handleTestAdd" />
       </div>
     </div>
 

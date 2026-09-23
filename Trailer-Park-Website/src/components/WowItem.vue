@@ -16,7 +16,16 @@ const qualityBorderStyle = computed(() => ({
 <template>
   <article class="card border-2 bg-base-100 shadow-sm" :style="qualityBorderStyle">
     <div class="card-body">
-      <h2 class="card-title">{{ item.name }}</h2>
+      <h2 class="card-title">
+        <a
+          :href="`https://www.wowhead.com/classic/item=${item.id}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link link-hover"
+        >
+          {{ item.name }}
+        </a>
+      </h2>
       <div class="card-actions justify-end">
         <span class="badge badge-outline">Amount: {{ item.quantity }}</span>
       </div>
