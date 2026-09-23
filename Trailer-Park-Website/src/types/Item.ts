@@ -15,4 +15,5 @@ export interface WowItem {
   qualityType: Quality
   qualityName: string
   quantity: number
+  iconUrl: string
 }

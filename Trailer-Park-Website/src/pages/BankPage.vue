@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import ActionButton from '@/components/ActionButton.vue'
-import WowItem from '@/components/WowItem.vue'
+import BankInventoryComponent from '@/components/BankInventoryComponent.vue'
 import { addTestItems, getWowItems } from '@/services/guildBankService'
 import type { WowItem as WowItemData } from '@/types/Item'
 import type { TestItem } from '@/types/testFakeItem'
@@ -70,8 +70,6 @@ onMounted(refreshBank)
       The guild bank is empty.
     </div>
 
-    <div v-else class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <WowItem v-for="item in items" :key="item.id" :item="item" />
-    </div>
+    <BankInventoryComponent v-else :items="items" />
   </section>
 </template>

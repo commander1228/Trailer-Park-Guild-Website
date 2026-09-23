@@ -14,21 +14,30 @@ const qualityBorderStyle = computed(() => ({
 </script>
 
 <template>
-  <article class="card border-2 bg-base-100 shadow-sm" :style="qualityBorderStyle">
-    <div class="card-body">
-      <h2 class="card-title">
+  <article
+    class="card relative aspect-square overflow-hidden border-2 bg-base-100 shadow-sm"
+    :style="qualityBorderStyle"
+  >
+    <img
+      :src="item.iconUrl"
+      :alt="item.name"
+      class="size-full object-contain p-3"
+    />
+    <div class="absolute inset-x-0 bottom-0 bg-base-100/90 p-2">
+      <h2 class="truncate font-semibold">
         <a
           :href="`https://www.wowhead.com/classic/item=${item.id}`"
           target="_blank"
           rel="noopener noreferrer"
           class="link link-hover"
+          :title="item.name"
         >
           {{ item.name }}
         </a>
       </h2>
-      <div class="card-actions justify-end">
-        <span class="badge badge-outline">Amount: {{ item.quantity }}</span>
-      </div>
     </div>
+    <span class="badge badge-outline absolute right-2 top-2 bg-base-100/90">
+      {{ item.quantity }}
+    </span>
   </article>
 </template>
