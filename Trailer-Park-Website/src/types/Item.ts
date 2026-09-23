@@ -10,7 +10,7 @@ export const QUALITY_TYPE = {
 export type Quality = keyof typeof QUALITY_TYPE;
 
 export interface WowItem {
-  id: number
+  blizzardId: number
   name: string
   qualityType: Quality
   qualityName: string
