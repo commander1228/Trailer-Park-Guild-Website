@@ -26,7 +26,7 @@ const qualityBorderStyle = computed(() => ({
     <div class="absolute inset-x-0 bottom-0 bg-base-100/90 p-2">
       <h2 class="truncate font-semibold">
         <a
-          :href="`https://www.wowhead.com/classic/item=${item.id}`"
+          :href="`https://www.wowhead.com/classic/item=${item.blizzardId}`"
           target="_blank"
           rel="noopener noreferrer"
           class="link link-hover"
